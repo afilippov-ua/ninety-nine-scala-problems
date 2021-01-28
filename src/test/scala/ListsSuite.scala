@@ -3,7 +3,7 @@ import org.scalatest.funsuite.AnyFunSuite
 
 class ListsSuite extends AnyFunSuite {
 
-  test("Getting the last element in a list has to return 8") {
+  test("Getting the last element of a list has to return 8") {
     assert(last(List(1, 1, 2, 3, 5, 8)) == 8)
   }
 
