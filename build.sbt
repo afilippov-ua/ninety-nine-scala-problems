@@ -1,0 +1,5 @@
+name := "ninety-nine-scala-problems"
+
+version := "0.1"
+
+scalaVersion := "2.13.4"
