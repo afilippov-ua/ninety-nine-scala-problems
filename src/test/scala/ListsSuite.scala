@@ -1,4 +1,4 @@
-import Lists.{last, length, penultimate}
+import Lists.{last, length, penultimate, reverse}
 import org.scalatest.funsuite.AnyFunSuite
 
 class ListsSuite extends AnyFunSuite {
@@ -29,6 +29,14 @@ class ListsSuite extends AnyFunSuite {
 
   test("P04 - length of list with 6 elements has to return 6") {
     assert(length(List(1, 1, 2, 3, 5, 8)) == 6)
+  }
+
+  test("P05 - reverse a list [1,2,3,4,5] has to return list [5,4,3,2,1]") {
+    assert(reverse(List(1, 2, 3, 4, 5)) == List(5, 4, 3, 2, 1))
+  }
+
+  test("P05 - reverse an empty list has to return an empty list") {
+    assert(reverse(List()) == List())
   }
 
 }
