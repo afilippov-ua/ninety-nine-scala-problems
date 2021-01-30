@@ -43,6 +43,7 @@ object Lists {
       case Nil => tail
       case h :: t => go(t, h :: tail)
     }
+
     go(as, Nil)
   }
 
@@ -68,5 +69,10 @@ object Lists {
     }
 
     go(as, as)._2
+  }
+
+  // Super simple solution with linear time and space complexity
+  def isPalindrome2[A](as: List[A]): Boolean = {
+    reverse(as) == as
   }
 }
