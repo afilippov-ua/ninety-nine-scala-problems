@@ -45,4 +45,28 @@ object Lists {
     }
     go(as, Nil)
   }
+
+  // Time complexity - O(N)
+  // Space complexity - O(1) - if we don't consider recursive stack
+  // possible improvement is to break in the middle of the list
+  def isPalindrome[A](as: List[A]): Boolean = {
+    def go(head: List[A], tail: List[A]): (List[A], Boolean) = {
+      if (head != Nil) {
+        val tuple = go(head.tail, tail)
+        if (!tuple._2) {
+          (Nil, false)
+        } else {
+          if (head.head == tuple._1.head) {
+            (tuple._1.tail, true)
+          } else {
+            (Nil, false)
+          }
+        }
+      } else {
+        (tail, true)
+      }
+    }
+
+    go(as, as)._2
+  }
 }

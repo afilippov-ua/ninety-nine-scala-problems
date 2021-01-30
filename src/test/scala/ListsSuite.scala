@@ -1,4 +1,4 @@
-import Lists.{last, length, penultimate, reverse}
+import Lists._
 import org.scalatest.funsuite.AnyFunSuite
 
 class ListsSuite extends AnyFunSuite {
@@ -39,4 +39,23 @@ class ListsSuite extends AnyFunSuite {
     assert(reverse(List()) == List())
   }
 
+  test("P06 - has to return true for list [1,2,3,2,1]") {
+    assert(isPalindrome(List(1, 2, 3, 2, 1)))
+  }
+
+  test("P06 - has to return true for list [1,2,3,3,2,1]") {
+    assert(isPalindrome(List(1, 2, 3, 3, 2, 1)))
+  }
+
+  test("P06 - has to return false for list [1,2,3,3,4,2,1]") {
+    assert(!isPalindrome(List(1, 2, 3, 3, 4, 2, 1)))
+  }
+
+  test("P06 - has to return true for list [1]") {
+    assert(isPalindrome(List(1)))
+  }
+
+  test("P06 - has to return true for list [1,1]") {
+    assert(isPalindrome(List(1, 1)))
+  }
 }
