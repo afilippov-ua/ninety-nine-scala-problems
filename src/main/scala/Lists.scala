@@ -81,4 +81,10 @@ object Lists {
     case head :: tail => head :: flatten(tail)
     case Nil => Nil
   }
+
+  def compress[A](as: List[A]): List[A] = as match {
+    case a1 :: a2 :: tail if (a1 == a2) => compress(a1 :: tail)
+    case head :: tail => head :: compress(tail)
+    case Nil => Nil
+  }
 }
