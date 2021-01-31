@@ -58,4 +58,28 @@ class ListsSuite extends AnyFunSuite {
   test("P06 - has to return true for list [1,1]") {
     assert(isPalindrome(List(1, 1)))
   }
+
+  test("P06_2 - has to return true for list [1,2,3,2,1]") {
+    assert(isPalindrome2(List(1, 2, 3, 2, 1)))
+  }
+
+  test("P06_2 - has to return true for list [1,2,3,3,2,1]") {
+    assert(isPalindrome2(List(1, 2, 3, 3, 2, 1)))
+  }
+
+  test("P06_2 - has to return false for list [1,2,3,3,4,2,1]") {
+    assert(!isPalindrome2(List(1, 2, 3, 3, 4, 2, 1)))
+  }
+
+  test("P06_2 - has to return true for list [1]") {
+    assert(isPalindrome2(List(1)))
+  }
+
+  test("P06_2 - has to return true for list [1,1]") {
+    assert(isPalindrome2(List(1, 1)))
+  }
+
+  test("P07 - flatten has to return list [1, 1, 2, 3, 5, 8]") {
+    assert(flatten(List(List(1, 1), 2, List(3, List(5, 8)))) == List(1, 1, 2, 3, 5, 8))
+  }
 }

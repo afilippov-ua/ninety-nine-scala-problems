@@ -75,4 +75,10 @@ object Lists {
   def isPalindrome2[A](as: List[A]): Boolean = {
     reverse(as) == as
   }
+
+  def flatten(as: List[Any]): List[Any] = as match {
+    case (x: List[Any]) :: xs => flatten(x) ::: flatten(xs)
+    case head :: tail => head :: flatten(tail)
+    case Nil => Nil
+  }
 }
