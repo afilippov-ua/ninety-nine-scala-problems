@@ -87,4 +87,14 @@ object Lists {
     case head :: tail => head :: compress(tail)
     case Nil => Nil
   }
+
+  def pack(as: List[Any]): List[Any] = {
+    def go(as: List[Any], acc: List[Any]): List[Any] = as match {
+      case a :: tail if acc.isEmpty => go(tail, a :: acc)
+      case a :: tail if a == acc.head => go(tail, a :: acc)
+      case a :: tail if a != acc.head => acc :: go(tail, List(a))
+      case Nil => List(acc)
+    }
+    go(as, List())
+  }
 }
